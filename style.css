@@ -1,0 +1,141 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    padding: 4% 0;
+}
+
+.row {
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.product {
+    position: relative;
+}
+
+.product .cart-tag {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 1;
+    background: black;
+    color: white;
+    padding: 0.5rem;
+    font-family: arial;
+    text-transform: uppercase;
+    font-size: 0.675rem;
+}
+
+.product .picture {
+    width: 100%;
+    height: 20rem;
+    position: relative;
+}
+
+.product:hover .picture button {
+    opacity: 1;
+}
+
+.product .picture button {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.825rem;
+    transition: all 250ms;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 85%;
+    margin: 0 auto;
+    transition: all 0.35s ease;
+}
+.product .picture button:hover {
+    color: white;
+    background: #222;
+}
+
+.product:hover .picture img {
+    opacity: 0.65;
+}
+
+.product .picture img {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.35s ease;
+}
+
+.product .details {
+    padding-top: 0.675rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product h4 {
+    font-size: 1.5rem;
+    margin: 0.125rem;
+    line-height: 1.4rem;
+}
+
+.product .rating {
+    font-size: 1.25rem;
+}
+
+.product .price {
+    font-size: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: geometricPrecision;
+}
+
+@media (min-width: 600px) {
+    .row {
+        display: flex;
+        max-width: 95%;
+    }
+    .col {
+        max-width: calc(99.9% * 1/3 - (16px - 16px * 1/3));
+        margin-bottom: 2rem;
+    }
+    .row .col:nth-child(1n) {
+        margin-right: 16px;
+    }
+    .row .col:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .row {
+        max-width: 90%;
+    }
+    .col {
+        max-width: calc(99.9% * 1/4 - (16px - 16px * 1/4));
+    }
+    .row .col:nth-child(1n) {
+        margin-right: 16px;
+    }
+    .row .col:nth-child(4n) {
+        margin-right: 0;
+    }
+}
